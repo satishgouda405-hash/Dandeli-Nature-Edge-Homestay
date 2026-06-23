@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 95%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 155 27% 24%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 100 12% 43%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 40 15% 90%;
+    --muted-foreground: 38 9% 50%;
+    --accent: 20 66% 47%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 38 15% 80%;
+    --input: 38 15% 80%;
+    --ring: 155 27% 24%;
+    --radius: 0.75rem;
+
+    --warm-cream: #F5F3EE;
+    --deep-forest: #2D4A3E;
+    --terracotta: #C75B2A;
+    --moss: #6B7F5F;
+    --gold: #C9A96E;
+    --warm-grey: #8A8578;
+    --near-black: #1A1A1A;
+    --white: #FFFFFF;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--warm-cream);
+    color: var(--near-black);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .font-accent {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+  }
+
+  .section-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .section-headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 500;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  .nav-link {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+
+  .pill-button {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .pill-button-primary {
+    background-color: var(--terracotta);
+    color: var(--white);
+    padding: 0 36px;
+    height: 52px;
+  }
+
+  .pill-button-primary:hover {
+    background-color: #B54D20;
+    transform: translateY(-2px);
+  }
+
+  .pill-button-secondary {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+    padding: 0 36px;
+    height: 52px;
+  }
+
+  .pill-button-secondary:hover {
+    background-color: var(--white);
+    color: var(--deep-forest);
+  }
+}
+
+@layer utilities {
+  .text-forest {
+    color: var(--deep-forest);
+  }
+
+  .text-moss {
+    color: var(--moss);
+  }
+
+  .text-terracotta {
+    color: var(--terracotta);
+  }
+
+  .text-gold {
+    color: var(--gold);
+  }
+
+  .text-warm-grey {
+    color: var(--warm-grey);
+  }
+
+  .bg-forest {
+    background-color: var(--deep-forest);
+  }
+
+  .bg-cream {
+    background-color: var(--warm-cream);
+  }
+
+  .bg-terracotta {
+    background-color: var(--terracotta);
+  }
+}
+
+/* Scroll indicator bounce */
+@keyframes bounce-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 1.5s ease-in-out infinite;
+}
+
+/* Loading screen */
+@keyframes loader-pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.loader-pulse {
+  animation: loader-pulse 1.5s ease-in-out infinite;
+}
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Image hover scale */
+.img-hover-scale {
+  transition: transform 0.6s ease;
+  will-change: transform;
+}
+
+.img-hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Form input focus */
+.form-input {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--deep-forest);
+  box-shadow: 0 0 0 3px rgba(45, 74, 62, 0.15);
+}
+
+/* Hide scrollbar for mobile menu */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
