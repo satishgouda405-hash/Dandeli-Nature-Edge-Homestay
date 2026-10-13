@@ -27,7 +27,13 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-forest pt-16 lg:pt-20 pb-8">
+    <footer className="bg-forest-black pt-16 lg:pt-20 pb-8 relative overflow-hidden">
+      {/* Giant ghost word */}
+      <div className="relative overflow-hidden select-none pointer-events-none -mb-6 lg:-mb-10">
+        <div className="font-display font-extrabold uppercase text-center text-[16vw] leading-[0.85] text-stroke-white opacity-[0.12] whitespace-nowrap">
+          Dandeli
+        </div>
+      </div>
       <div className="max-w-[1400px] mx-auto px-[6vw]">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
           {/* Left Column - Brand */}
@@ -39,7 +45,7 @@ export default function Footer() {
                 className="h-10 w-auto brightness-0 invert"
               />
               <div>
-                <div className="text-white text-xl font-medium tracking-[0.1em]">
+                <div className="text-white text-xl font-bold tracking-[0.1em] font-display uppercase">
                   NATURE EDGE
                 </div>
                 <div className="text-white/60 text-sm">Dandeli Homestay</div>
@@ -52,7 +58,7 @@ export default function Footer() {
 
           {/* Center Column - Quick Links */}
           <div>
-            <div className="text-white/50 text-xs font-medium uppercase tracking-[0.08em] mb-5">
+            <div className="text-lime-wild text-xs font-medium uppercase tracking-[0.2em] mb-5 font-display">
               EXPLORE
             </div>
             <div className="grid grid-cols-2 gap-3">
@@ -61,7 +67,7 @@ export default function Footer() {
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-white text-sm hover:text-terracotta transition-colors duration-300"
+                  className="text-white text-sm hover:text-lime-wild transition-colors duration-300"
                 >
                   {link.label}
                 </a>
@@ -71,14 +77,14 @@ export default function Footer() {
 
           {/* Right Column - Social + Newsletter */}
           <div>
-            <div className="text-white/50 text-xs font-medium uppercase tracking-[0.08em] mb-5">
+            <div className="text-lime-wild text-xs font-medium uppercase tracking-[0.2em] mb-5 font-display">
               FOLLOW US
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               <a
                 href="#"
                 onClick={(e) => e.preventDefault()}
-                className="text-white hover:text-terracotta transition-colors"
+                className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white/80 hover:text-forest-black hover:bg-lime-wild hover:border-lime-wild hover:-translate-y-1 transition-all duration-300"
                 aria-label="Instagram"
               >
                 <Instagram size={22} />
@@ -86,7 +92,7 @@ export default function Footer() {
               <a
                 href="#"
                 onClick={(e) => e.preventDefault()}
-                className="text-white hover:text-terracotta transition-colors"
+                className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white/80 hover:text-forest-black hover:bg-lime-wild hover:border-lime-wild hover:-translate-y-1 transition-all duration-300"
                 aria-label="Facebook"
               >
                 <Facebook size={22} />
@@ -94,7 +100,7 @@ export default function Footer() {
               <a
                 href="#"
                 onClick={(e) => e.preventDefault()}
-                className="text-white hover:text-terracotta transition-colors"
+                className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white/80 hover:text-forest-black hover:bg-lime-wild hover:border-lime-wild hover:-translate-y-1 transition-all duration-300"
                 aria-label="YouTube"
               >
                 <Youtube size={22} />
@@ -103,7 +109,7 @@ export default function Footer() {
                 href="https://wa.me/919902684037"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-terracotta transition-colors"
+                className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white/80 hover:text-forest-black hover:bg-lime-wild hover:border-lime-wild hover:-translate-y-1 transition-all duration-300"
                 aria-label="WhatsApp"
               >
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -127,9 +133,9 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="w-11 h-11 bg-terracotta rounded-r-lg flex items-center justify-center hover:bg-[#B54D20] transition-colors"
+                  className="w-11 h-11 bg-lime-wild rounded-r-lg flex items-center justify-center hover:bg-[#B54D20] transition-colors"
                 >
-                  <ArrowRight size={18} className="text-white" />
+                  <ArrowRight size={18} className="text-forest-black" />
                 </button>
               </form>
             </div>
@@ -137,9 +143,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-14 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-14 pt-6 border-t border-lime-wild/20 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/50 text-xs">
-            &copy; 2025 Dandeli Nature Edge Homestay. All rights reserved.
+            &copy; 2026 Dandeli Nature Edge Homestay. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-white/50 text-xs">
             <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-white transition-colors">
